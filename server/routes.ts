@@ -1,5 +1,5 @@
-import {Countries} from '../client/components/Countries/Countries.tsx';
-import { Plants } from  '../client/components/Plants/Plants.tsx';
+import Countries from '../client/components/Countries/Countries.tsx';
+import Plants from  '../client/components/Plants/Plants.tsx';
 
 export const routes = [
     {

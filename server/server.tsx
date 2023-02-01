@@ -1,5 +1,5 @@
-import {React, ReactDOMServer, ReactDOM } from '../deps.ts';
-import {App} from '../client/app.tsx';
+import {React, ReactDOMServer, ReactDOM, Application, Router, emit, Dero, ReactRouterDom } from '../deps.ts';
+import App from '../client/app.tsx';
 import {types} from './schema.ts';
 import { resolvers } from './resolvers.ts';
 import { routes } from './routes.ts';
@@ -11,8 +11,8 @@ const router = new Router();
 app.use(router.routes());
 app.use(router.allowedMethods());
 
-const { files } = await Deno.emit(
-  "../client/client.tsx",
+const { files } = await emit(
+  "./server/client.tsx",
   {
       check: false,
       bundle: "module",
@@ -59,13 +59,13 @@ class Server extends Dero {
         });
         // exact for all route
         this.get("/*", (req, res) => {
-            const route = routes.find(r => matchPath(req.url, r));
+            const route = routes.find(r => ReactRouterDom.matchPath(req.url, r));
             if (route) {
                 res.locals.seo = route.seo;
                 return (
-                    <StaticRouter location={req.url}>
+                    <ReactRouterDom.StaticRouter location={req.url}>
                         <App isServer={true} Component={route.component} initData={{ seo: route.seo }} />
-                    </StaticRouter>
+                    </ReactRouterDom.StaticRouter>
                 );
             }
             res.status(404).body("Not Found");

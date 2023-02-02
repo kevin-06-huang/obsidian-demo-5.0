@@ -23,12 +23,13 @@ const config = {
 };
  
 // parallel connections so we can have concurrent access (maybe not needed)
-const POOL_CONNECTIONS = 10; // breaks at 10+ due to ElephantSQL
+const POOL_CONNECTIONS = 1; // breaks at 10+ due to ElephantSQL
 
 // connect to db
 const pool = new Pool(config, POOL_CONNECTIONS);
 
 export async function createDb() {
+  console.log('test');
   // drops the schema
   try {
     const client = await pool.connect();

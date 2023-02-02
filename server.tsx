@@ -1,4 +1,4 @@
-import { Application, Router, send, ObsidianRouter, gql } from './serverDeps.ts';
+import { Application, Router, send, ObsidianRouter, gql, emit } from './serverDeps.ts';
 import App from './client/app.tsx';
 import { React, ReactDOM, ReactDOMServer } from './deps.ts';
 import { staticFileMiddleware } from './staticFileMiddleware.ts';
@@ -11,12 +11,11 @@ import { createDb } from './server/db/db.ts';
 import { oakCors } from "https://deno.land/x/cors/mod.ts";
 
 const app = new Application();
-const port: number = 3000;
+const port: number = 3001;
 
 // specify route to create bundle
 const jsBundlePath = '/main.js'
-
-const { files, diagnostics } = await Deno.emit('./server/client.tsx', {
+const { files, diagnostics } = await emit('./server/client.tsx', {
 	check: false,
   bundle: "module",
   // compilerOptions: { lib: ["dom", "dom.iterable", "esnext"] },

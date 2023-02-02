@@ -11,16 +11,7 @@ const router = new Router();
 app.use(router.routes());
 app.use(router.allowedMethods());
 
-const { files } = await emit(
-  "./server/client.tsx",
-  {
-      check: false,
-      bundle: "module",
-      compilerOptions: {
-          lib: ["dom", "dom.iterable", "esnext"],
-      }
-  },
-);
+const { files } = await emit("./server/client.tsx");
 
 const BROWSER_PATH = '/dev-client.js';
 
@@ -38,6 +29,8 @@ class Server extends Dero {
                         <!doctype html>
                         <html>
                         <head>
+                            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+                            <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
                             <title>${seo.title}</title>
                             <meta name="description" content="${seo.description}">
                             <script>window.__INITIAL_DATA__ = ${JSON.stringify(seo)};</script>

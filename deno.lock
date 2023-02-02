@@ -888,5 +888,61 @@
     "https://dev.jspm.io/react-dom/server": "28574945db7509e247664d122c16fa084d67088c7afd20607b8027ff6f750cfd",
     "https://dev.jspm.io/react-router-dom@5.2.0": "7d31b050fe87ac6f7ad4172cfee1b676b388d123bf9dac63df93e8d8353934e5",
     "https://raw.githubusercontent.com/pillarjs/path-to-regexp/v6.1.0/src/index.ts": "8747ddaf85a761df4059cbc48a78cf710106f6b4c9d6932feb4d35120ac0990a"
+  },
+  "npm": {
+    "specifiers": { "redis@^4.5": "redis@4.6.4_@redis+client@1.5.5" },
+    "packages": {
+      "@redis/bloom@1.2.0_@redis+client@1.5.5": {
+        "integrity": "sha512-HG2DFjYKbpNmVXsa0keLHp/3leGJz1mjh09f2RLGGLQZzSHpkmZWuwJbAvo3QcRY8p80m5+ZdXZdYOSBLlp7Cg==",
+        "dependencies": { "@redis/client": "@redis/client@1.5.5" }
+      },
+      "@redis/client@1.5.5": {
+        "integrity": "sha512-fuMnpDYSjT5JXR9rrCW1YWA4L8N/9/uS4ImT3ZEC/hcaQRI1D/9FvwjriRj1UvepIgzZXthFVKMNRzP/LNL7BQ==",
+        "dependencies": {
+          "cluster-key-slot": "cluster-key-slot@1.1.2",
+          "generic-pool": "generic-pool@3.9.0",
+          "yallist": "yallist@4.0.0"
+        }
+      },
+      "@redis/graph@1.1.0_@redis+client@1.5.5": {
+        "integrity": "sha512-16yZWngxyXPd+MJxeSr0dqh2AIOi8j9yXKcKCwVaKDbH3HTuETpDVPcLujhFYVPtYrngSco31BUcSa9TH31Gqg==",
+        "dependencies": { "@redis/client": "@redis/client@1.5.5" }
+      },
+      "@redis/json@1.0.4_@redis+client@1.5.5": {
+        "integrity": "sha512-LUZE2Gdrhg0Rx7AN+cZkb1e6HjoSKaeeW8rYnt89Tly13GBI5eP4CwDVr+MY8BAYfCg4/N15OUrtLoona9uSgw==",
+        "dependencies": { "@redis/client": "@redis/client@1.5.5" }
+      },
+      "@redis/search@1.1.1_@redis+client@1.5.5": {
+        "integrity": "sha512-pqCXTc5e7wJJgUuJiC3hBgfoFRoPxYzwn0BEfKgejTM7M/9zP3IpUcqcjgfp8hF+LoV8rHZzcNTz7V+pEIY7LQ==",
+        "dependencies": { "@redis/client": "@redis/client@1.5.5" }
+      },
+      "@redis/time-series@1.0.4_@redis+client@1.5.5": {
+        "integrity": "sha512-ThUIgo2U/g7cCuZavucQTQzA9g9JbDDY2f64u3AbAoz/8vE2lt2U37LamDUVChhaDA3IRT9R6VvJwqnUfTJzng==",
+        "dependencies": { "@redis/client": "@redis/client@1.5.5" }
+      },
+      "cluster-key-slot@1.1.2": {
+        "integrity": "sha512-RMr0FhtfXemyinomL4hrWcYJxmX6deFdCxpJzhDttxgO1+bcCnkk+9drydLVDmAMG7NE6aN/fl4F7ucU/90gAA==",
+        "dependencies": {}
+      },
+      "generic-pool@3.9.0": {
+        "integrity": "sha512-hymDOu5B53XvN4QT9dBmZxPX4CWhBPPLguTZ9MMFeFa/Kg0xWVfylOVNlJji/E7yTZWFd/q9GO5TxDLq156D7g==",
+        "dependencies": {}
+      },
+      "redis@4.6.4_@redis+client@1.5.5": {
+        "integrity": "sha512-wi2tgDdQ+Q8q+PR5FLRx4QvDiWaA+PoJbrzsyFqlClN5R4LplHqN3scs/aGjE//mbz++W19SgxiEnQ27jnCRaA==",
+        "dependencies": {
+          "@redis/bloom": "@redis/bloom@1.2.0_@redis+client@1.5.5",
+          "@redis/client": "@redis/client@1.5.5",
+          "@redis/graph": "@redis/graph@1.1.0_@redis+client@1.5.5",
+          "@redis/json": "@redis/json@1.0.4_@redis+client@1.5.5",
+          "@redis/search": "@redis/search@1.1.1_@redis+client@1.5.5",
+          "@redis/time-series": "@redis/time-series@1.0.4_@redis+client@1.5.5"
+        }
+      },
+      "yallist@4.0.0": {
+        "integrity": "sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==",
+        "dependencies": {}
+      }
+    }
   }
 }

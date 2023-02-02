@@ -1,5 +1,7 @@
 {
   "tasks": {
-    "start": "deno run -A --unstable --allow-env --watch=static/,routes/,data/ server.tsx"
+    "start": "deno run -A --unstable --allow-env --watch=static/,routes/,data/ server.tsx",
+    "dev": "deno run -A --unstable --allow-env --watch=static/,routes/,data/ ./server/server.tsx"
+
   }
 }
